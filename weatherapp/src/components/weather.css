@@ -1,0 +1,183 @@
+.weatherApp {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right bottom, blue, aqua);
+}
+
+.weatherApp .mainContainer {
+    width: 100%;
+    height: auto;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    color: white;
+}
+
+.weatherApp .mainContainer .leftSection {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 1rem;
+}
+
+.weatherApp .mainContainer .leftSection .weatherIcon {
+    border-bottom: 1px solid white;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.weatherApp .mainContainer .leftSection .weatherDescription {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+    font-weight: 300;
+}
+
+.weatherApp .mainContainer .leftSection .weatherDescription div {
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem .5rem;
+}
+
+.weatherApp .mainContainer .leftSection .weatherDescription div span {
+    margin-left: 2rem;
+}
+
+.weatherApp .mainContainer .leftSection .weatherDescription div h3 {
+    font-weight: 200;
+}
+
+.weatherApp .mainContainer .leftSection input {
+    padding: .8rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    font-size: large;
+    background-color: transparent;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, .4) inset;
+    color: white;
+    width: 100%;
+}
+
+.weatherApp .mainContainer .rightSection {
+    background: url("../../public/images/download.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25vw;
+    padding: 1rem;
+    position: relative;
+}
+
+.weatherApp .mainContainer .rightSection .topContainer h1 {
+    text-transform: uppercase;
+}
+
+.weatherApp .mainContainer .rightSection .rightSubSection .bottomContainer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+.weatherApp .mainContainer .rightSection .rightSubSection .bottomContainer .bottomDescription {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.weatherApp .mainContainer .rightSection .rightSubSection .bottomContainer .degree h1 {
+    font-size: 3.2em;
+    font-weight: 200;
+}
+
+/* Media Queries */
+
+/* Large screens (Desktops) */
+@media only screen and (min-width: 1200px) {
+    .weatherApp .mainContainer {
+        grid-template-columns: 40% 60%;
+    }
+
+    .weatherApp .mainContainer .rightSection {
+        width: 35vw;
+    }
+}
+
+/* Medium screens (Laptops) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .weatherApp .mainContainer {
+        grid-template-columns: 40% 60%;
+    }
+
+    .weatherApp .mainContainer .rightSection {
+        width: 40vw;
+    }
+}
+
+/* Small screens (Tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .weatherApp .mainContainer {
+        grid-template-columns: 50% 50%;
+    }
+
+    .weatherApp .mainContainer .rightSection,
+    .weatherApp .mainContainer .leftSection {
+        width: 40vw;
+    }
+}
+
+/* Extra small screens (Mobiles) */
+@media only screen and (max-width: 767px) {
+    .weatherApp {
+        height: fit-content;
+    }
+
+    .weatherApp .mainContainer {
+        grid-template-columns: 100%;
+    }
+
+    .weatherApp .mainContainer .rightSection {
+        width: 100vw;
+        height: 50vh;
+        background-size: 100% 100%;
+        padding: .5rem .2rem;
+    }
+    .weatherApp .mainContainer .rightSection .rightSubSection .bottomContainer{
+        font-size: smaller;
+    }
+    .weatherApp .mainContainer .rightSection .rightSubSection .bottomContainer .degree h1 {
+        font-size: 2.5em;
+    }
+
+    .weatherApp .mainContainer .leftSection {
+        padding: .5rem;
+    }
+
+    .weatherApp .mainContainer .leftSection .weatherIcon {
+        padding: 2rem;
+    }
+
+    .weatherApp .mainContainer .leftSection .weatherDescription {
+        width: 100%;
+    }
+
+    .weatherApp .mainContainer .leftSection input {
+        padding: 1.2rem;
+        font-size: medium;
+        position: relative;
+    }
+}
