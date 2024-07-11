@@ -15,16 +15,17 @@ const WeatherApp = () => {
             const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${secret_key}`
             const response = await fetch(URL);
             const jsonData = await response.json();
-            // console.log(jsonData);
+            console.log(jsonData);
             const feelsLike = jsonData.main.feels_like;
             const hmdity = jsonData.main.humidity;
+            const cloudPercent = jsonData.clouds.all;
             const windspeed = jsonData.wind.speed;
             const temp = jsonData.main.temp;
             const mintemp = jsonData.main.temp_min;
             const maxtemp = jsonData.main.temp_max;
             const weatherIcon = jsonData.weather[0].icon;
-            const weatherDesc = jsonData.weather[0].description;
-            setWeatherDetails({ feelsLike, hmdity, temp, mintemp, maxtemp, windspeed, weatherIcon, weatherDesc });
+            const weatherDesc = jsonData.weather[0].main;
+            setWeatherDetails({ feelsLike, hmdity, temp, mintemp, maxtemp, windspeed, weatherIcon, weatherDesc, cloudPercent });
         } catch (error) {
             console.log(error);
         }
@@ -47,6 +48,9 @@ const WeatherApp = () => {
                         </div>
                         <div className="humidity">
                             <h3>humidity</h3><span>{weatherDetails.hmdity} %</span>
+                        </div>
+                        <div className="clouds">
+                            <h3>Clouds</h3><span>{weatherDetails.cloudPercent} %</span>
                         </div>
                         <div className="wind">
                             <h3>Wind</h3><span>{weatherDetails.windspeed} meter/s</span>
