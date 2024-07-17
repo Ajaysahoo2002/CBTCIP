@@ -91,7 +91,7 @@ function App() {
               tasks ? <>{
                 tasks.map((elem, index) => {
                   return (
-                    <div className="elementLists" key={index} onClick={() => { taskCompleted(elem.id) }} title='double click to mark task as completed'>
+                    <div className="elementLists" key={index} onClick={() => { taskCompleted(elem.id) }} title='click to mark task as completed'>
                       <p style={{ textTransform: "capitalize" }}>{elem.task}</p>
                       <p>{elem.createdAt}</p>
                       <div className="actionIcons">
