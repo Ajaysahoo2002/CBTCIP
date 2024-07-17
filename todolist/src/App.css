@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: red;
+}
+
+button {
+  background-color: transparent;
+  padding: .5rem 1.5rem;
+  border: 2px solid gray;
+  border-radius: .5rem;
+  transition: .2s ease-in-out all;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+button:hover {
+  background-color: rgb(0, 255, 140);
+  border: 2px solid rgb(0, 255, 140);
+  color: white;
+}
+
+.appContainer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.appContainer .top {
+  background-color: rgb(0, 251, 255);
+  height: 30vh;
+}
+
+.appContainer .mainContainer {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  height: fit-content;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+
+.appContainer .mainContainer .topSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: .5rem;
+  box-shadow: 0 0 10px 0 grey;
+  padding: 2rem;
+}
+
+.appContainer .mainContainer .topSection h1 {
+  text-align: center;
+  color: white;
+}
+
+.appContainer .mainContainer .topSection form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appContainer .mainContainer .topSection input {
+  width: 100%;
+  border: 2px solid gray;
+  background-color: transparent;
+  padding: .5rem;
+  border-radius: .5rem;
+  outline: none;
+}
+
+.appContainer .mainContainer .bottomSection {
+  margin-top: 1rem;
+  width: 100%;
+  height: fit-content;
+  font-size: .90em;
+}
+
+.appContainer .mainContainer .bottomSection h1 {
+  text-align: center;
+  padding: .5rem 0;
+}
+
+.appContainer .mainContainer .bottomSection .completetask {
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+  box-shadow: -3px 3px 7px 0 rgb(38, 38, 38);
+  background-color: rgba(142, 142, 142, .3);
+}
+
+.appContainer .mainContainer .bottomSection .elementLists {
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+  box-shadow: 0 0 10px 5px rgb(0, 251, 255) inset, -3px 3px 7px 0 rgb(38, 38, 38);
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+
+.appContainer .mainContainer .bottomSection .elementLists:hover,
+.appContainer .mainContainer .bottomSection .completetask:hover {
+  scale: 1.04;
+}
+
+.appContainer .mainContainer .bottomSection .elementLists p {
+  font-size: large;
+}
+
+.appContainer .mainContainer .bottomSection .completedLists {
+  margin-top: 1rem;
+}
+
+.appContainer .mainContainer .bottomSection .completedLists .completetask span {
+  margin-left: 2rem;
+}
+
+
+/* Media queries */
+@media only screen and (min-width: 1024px) {
+  .appContainer .mainContainer .topSection {
+    padding: 10px;
+  }
+
+  .appContainer .mainContainer .bottomSection {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .appContainer .mainContainer .bottomSection .elementLists p {
+    font-size: medium;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .appContainer .top {
+    height: 25vh;
+  }
+
+  .appContainer .mainContainer {
+    top: 8%;
+    left: 10%;
+    width: 80%;
+  }
+
+  .appContainer .mainContainer .bottomSection h1 {
+    font-size: medium;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .appContainer .top {
+    height: 22vh;
+  }
+
+  .appContainer .mainContainer .topSection h1 {
+    font-size: large;
+  }
+
+  .appContainer .mainContainer .topSection input {
+    font-size: small;
+  }
+
+  .appContainer .mainContainer {
+    top: 3%;
+    left: 1%;
+    width: 98%;
+  }
+
+  .appContainer .mainContainer .bottomSection h1 {
+    font-size: medium;
+  }
+
+  .appContainer .mainContainer .bottomSection .lists p {
+    font-size: 1em;
+  }
+
+  .appContainer .mainContainer .bottomSection .elementLists {
+    padding: .22rem;
+  }
+}
+
+
+@media only screen and (max-width: 479px) {
+  .appContainer {
+    font-size: .55em;
+  }
+
+  .appContainer .mainContainer .topSection {
+    padding: .5rem;
+  }
+
+  .appContainer .top {
+    height: 15vh;
+  }
+
+  .appContainer .mainContainer {
+    top: 1%;
+    left: 0;
+    width: 100%;
+  }
+
+  .appContainer .mainContainer .bottomSection h1 {
+    font-size: medium;
+  }
+
+  .appContainer .mainContainer .bottomSection .lists p {
+    font-size: 1.35em;
+  }
+
+  .appContainer .mainContainer .bottomSection .elementLists {
+    padding: .22rem;
+  }
+
+  .appContainer .mainContainer .bottomSection .lists button {
+    padding: .22rem 1rem;
+  }
+
+  .appContainer .mainContainer .bottomSection .completetask {
+    padding: .22rem;
+  }
+
+  .appContainer .mainContainer .bottomSection .completetask button {
+    padding: .22rem 1rem;
+  }
+}
